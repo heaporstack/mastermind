@@ -1,0 +1,26 @@
+[
+  {
+    "name": "RED",
+    "value": 16711680
+  },
+  {
+    "name": "GREEN",
+    "value": 65280
+  },
+  {
+    "name": "BLUE",
+    "value": 255
+  },
+  {
+    "name": "WHITE",
+    "value": 16777215
+  },
+  {
+    "name": "PINK",
+    "value": 1046215
+  },
+  {
+    "name": "YELLOW",
+    "value": 16776960
+  }
+]

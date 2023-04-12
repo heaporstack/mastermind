@@ -1,0 +1,14 @@
+{
+  "name": "mastermind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "source/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --use_strict source/index.js",
+    "test": "node --use_strict source/verifications/verifications.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
