@@ -1,7 +1,8 @@
 import {createInterface} from "node:readline";
 import {stdin, stdout} from "node:process";
+import {Color} from "./color";
 
-async function readline(prompt) {
+async function readline(prompt: string): Promise<string> {
   const rl = createInterface({
     input: stdin,
     output: stdout
@@ -17,29 +18,7 @@ async function readline(prompt) {
   });
 }
 
-export async function getUserColors({colorsKeys, length}) {
-  // security
-  if (!(colorsKeys instanceof Array)) {
-    throw TypeError("colorsKeys must be an array");
-  }
-  if (typeof length !== "number") {
-    throw TypeError("length must be a number");
-  }
-  let error = false;
-  for (const element of colorsKeys) {
-    if (!("key" in element)) {
-      error = true;
-      break;
-    }
-    if (!("name" in element)) {
-      error = true;
-      break;
-    }
-  }
-  if (error) {
-    throw TypeError("colorsKeys must contain objects with keys \"key\" and \"name\"");
-  }
-
+export async function getUserColors(colorsKeys: Array<Color>, length: number) {
   let colorsListString = "";
   colorsKeys.forEach((element, index) => {
     if (index === 0) {
@@ -48,7 +27,7 @@ export async function getUserColors({colorsKeys, length}) {
       colorsListString = `${colorsListString}, ${element.key} (${element.name})`;
     }
   });
-  let arr = [];
+  let arr = new Array<string>();
   while (true) {
     let input = await readline(`\x1b[32mMastermind\x1b[0m Enter a combination of valid colors (length must be ${length}), choose between [${colorsListString}] :\n`);
     arr = input.split("");

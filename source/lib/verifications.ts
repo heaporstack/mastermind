@@ -1,4 +1,4 @@
-export function countIncorrectPositions(src, arr) {
+export function countIncorrectPositions<T>(src: Array<T>, arr: Array<T>): number {
   if (src.length !== arr.length) {
     return -1;
   }
@@ -23,7 +23,7 @@ export function countIncorrectPositions(src, arr) {
   return ret;
 }
 
-export function countCorrectPositions(src, arr) {
+export function countCorrectPositions<T>(src: Array<T>, arr: Array<T>): number {
   if (src.length !== arr.length) {
     return -1;
   }

@@ -1,4 +1,4 @@
-import {countCorrectPositions, countIncorrectPositions} from "./verifications.js";
+import {countCorrectPositions, countIncorrectPositions} from "./verifications";
 
 console.assert(countIncorrectPositions(["a", "b", "c"], ["b", "a"]) === -1);
 console.assert(countIncorrectPositions(["a", "b", "c"], ["b", "a", "c"]) === 2);
