@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   mode: "production",
   target: "node",
@@ -7,16 +5,16 @@ module.exports = {
     main: "./source/index.ts"
   },
   output: {
-    path: path.resolve(__dirname, "./build"),
+    path: require("node:path").resolve(__dirname, "./build"),
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".js"]
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         loader: "ts-loader",
         exclude: /.*\.test\..*/
       }

@@ -8,7 +8,7 @@ async function mastermindCli() {
   const length = 4;
   const secretCode = generateSecretCode(colorsKeys, length);
   console.log(secretCode);
-  let userGuess = new Array(length);
+  let userGuess = new Array<string>(length);
   let attempts = 0;
   while (countCorrectPositions(userGuess, secretCode) !== length) {
     userGuess = await getUserColors(colorsKeys, length);

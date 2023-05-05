@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2015",
     "module": "CommonJS",
     "outDir": "./build/tsc",
     "rootDir": "./source/",
-    "strict": true
+    "strict": true,
+    "noEmitOnError": true
   }
 }

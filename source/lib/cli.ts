@@ -8,10 +8,7 @@ async function readline(prompt: string): Promise<string> {
     output: stdout
   });
   return new Promise((resolve, reject) => {
-    rl.question(prompt, (answer) => {
-      if (answer === undefined) {
-        answer = "";
-      }
+    rl.question(prompt, (answer: string) => {
       rl.close();
       resolve(answer);
     });
